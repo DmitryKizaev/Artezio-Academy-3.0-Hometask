@@ -4,12 +4,17 @@
 
 def myrange(start, stop, step):
     if step == 0:
-        return 'ValueError'
+        return 'Value Error'
     l = []
     i = start
-    while i < stop:
-        l.append(i)
-        i += step
+    if stop > start:
+        while i < stop:
+            l.append(i)
+            i += step
+    else:
+        while i > stop:
+            l.append(i)
+            i -= step
     return l
 
 
