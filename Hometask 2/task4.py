@@ -3,9 +3,11 @@
 
 
 def myrange(start, stop, step):
+    if step == 0:
+        return 'ValueError'
     l = []
     i = start
-    while i <= stop:
+    while i < stop:
         l.append(i)
         i += step
     return l
