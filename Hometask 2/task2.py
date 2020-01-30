@@ -3,24 +3,22 @@
 
 # "между" в моем решении подразумевается не включая границы a и b
 
-def divisibility(a, b, c):
+
+def divisibility(a_, b_, c_):
     if c == 0:
         return 'division by 0'
     else:
         num = 0
-        for i in range(a, b):
+        for i in range(a_, b_):
             if i % c == 0:
                 num += 1
-               # print ('Number found:', i, 'total:', num)
         return num
 
+
 print('Enter a:')
-a = int (input())
+a = int(input())
 print('Enter b:')
-b = int (input())
+b = int(input())
 print('Enter c:')
-c = int (input())
-print (divisibility(a, b, c))
-
-
-
+c = int(input())
+print(divisibility(a, b, c))
