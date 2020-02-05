@@ -4,8 +4,9 @@
 
 
 def dict_check_digit(_dic):
+    """True if every value in a dictionary is a number"""
     for i in _dic:
-        if type(_dic[i]) != int:
+        if isinstance(_dic[i], int):
             if not _dic[i].isdigit():
                 return False
     return True
@@ -23,8 +24,8 @@ def pop_max(_dic):
 
 
 def input_dict():
-    _dic = {}
     """Allows to enter a dictionary and prints the result"""
+    _dic = {}
     print("Enter number of elements in dictionary")
     n = int(input())
     for i in range(1, n+1):
@@ -42,7 +43,7 @@ if dict_check_digit(d):
     for i in d:
         d[i] = int(d[i])
 
-if len(d) >=3:
+if len(d) >= 3:
     for i in range(3):
         print(i+1, "max element is", pop_max(d))
 else:
