@@ -6,6 +6,7 @@ from time import sleep
 
 
 def cycle(it):
+    """Циклическая итерация по it"""
     # первый проход
     values = []
     for i in it:
@@ -20,8 +21,8 @@ def cycle(it):
             count = 0  # зациклим
 
 
-i = iter(["oh", "###", "here", "we", "go", "again", "------"])
-c = cycle(i)
+WORDS = ["oh", "###", "here", "we", "go", "again", "------"]
+C = cycle(WORDS)
 while True:
-    print(next(c))
+    print(next(C))
     sleep(0.5)
