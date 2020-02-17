@@ -1,4 +1,4 @@
-"""Homework 6 Part 2 Generators Task 2"""
+"""Homework 6 Part 2 Generators Task 3"""
 
 # Есть два списка разной длины, в одном ключи,
 # в другом значения. Составить словарь.
