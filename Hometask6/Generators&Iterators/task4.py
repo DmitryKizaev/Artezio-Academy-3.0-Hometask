@@ -23,6 +23,7 @@ def cycle(it):
 
 WORDS = ["oh", "###", "here", "we", "go", "again", "------"]
 C = cycle(WORDS)
+
 while True:
     print(next(C))
     sleep(0.5)
