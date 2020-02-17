@@ -1,4 +1,4 @@
-"""Homework 6 Part 2 Generators Task 2"""
+"""Homework 6 Part 2 Generators Task 3"""
 
 # Есть два списка разной длины, в одном ключи,
 # в другом значения. Составить словарь.
@@ -11,6 +11,7 @@ def dict_generate(l_keys, l_values):
     while len(l_keys) > len(l_values):
         l_values.append(None)
     return {key: value for key, value in zip(l_keys, l_values)}
+
 
 print("Values:")
 ATTR = ["zero", "one", "two", "three", "four"]
