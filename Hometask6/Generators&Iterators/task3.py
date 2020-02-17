@@ -12,6 +12,7 @@ def dict_generate(l_keys, l_values):
         l_values.append(None)
     return {key: value for key, value in zip(l_keys, l_values)}
 
+
 print("Values:")
 ATTR = ["zero", "one", "two", "three", "four"]
 print(ATTR)
