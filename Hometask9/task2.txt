@@ -1,0 +1,38 @@
+# Задание 2
+
+# показать всех сотрудников с зарплатой меньше 30 000 рублей
+
+SELECT personal_info.first_name, personal_info.last_name, positions.salary
+FROM personal_info INNER JOIN positions ON personal_info.position_id=positions.id
+WHERE positions.salary < 30000;
+
+# показать всех сотрудников, занимающих определённую должность, и с зарплатой меньше 30 000 рублей
+
+# курьеры: выдаст 2 ребят
+
+SELECT personal_info.first_name, personal_info.last_name, positions.salary
+FROM personal_info INNER JOIN positions ON personal_info.position_id=positions.id
+WHERE positions.salary < 30000 AND positions.position = "Courier";
+
+# дизайнеры: не выдаст ничего, зарплаты больше 30к
+
+SELECT personal_info.first_name, personal_info.last_name, positions.salary
+FROM personal_info INNER JOIN positions ON personal_info.position_id=positions.id
+WHERE positions.salary < 30000 AND positions.position = "Designer";
+
+# проверим, все ли работает как надо
+# устроим коммунизм и уравняем ЗП курьеров и дизайнеров
+
+UPDATE positions SET salary=25000 WHERE id IN (3,4);
+
+# снова тот же самый вывод информации, для тех и для других
+
+SELECT personal_info.first_name, personal_info.last_name, positions.salary
+FROM personal_info INNER JOIN positions ON personal_info.position_id=positions.id
+WHERE positions.salary < 30000 AND positions.position = "Courier";
+
+SELECT personal_info.first_name, personal_info.last_name, positions.salary
+FROM personal_info INNER JOIN positions ON personal_info.position_id=positions.id
+WHERE positions.salary < 30000 AND positions.position = "Designer";
+
+# всё работает, мы восхитительны

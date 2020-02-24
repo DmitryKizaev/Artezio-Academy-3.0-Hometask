@@ -1,0 +1,35 @@
+# Задание 1
+
+CREATE DATABASE IF NOT EXISTS my_office;
+
+USE my_office;
+
+CREATE TABLE IF NOT EXISTS personal_info (
+	id INT UNSIGNED NOT NULL AUTO_INCREMENT primary key,
+	first_name VARCHAR(30) NOT NULL,
+	last_name VARCHAR(30) NOT NULL,
+	position_id VARCHAR(30) NOT NULL
+    );
+
+CREATE TABLE IF NOT EXISTS positions (
+	id INT UNSIGNED NOT NULL AUTO_INCREMENT primary key,
+	position VARCHAR(30) NOT NULL,
+    	salary INT NOT NULL
+);
+
+INSERT INTO positions (id, position, salary) VALUES (null, 'Boss', 100000);
+INSERT INTO positions (id, position, salary) VALUES (null, 'Secretary', 34000);
+INSERT INTO positions (id, position, salary) VALUES (null, 'Courier', 15000);
+INSERT INTO positions (id, position, salary) VALUES (null, 'Designer', 75000);
+INSERT INTO positions (id, position, salary) VALUES (null, 'Cleaning manager', 12000);
+
+SELECT * FROM positions;
+
+INSERT INTO personal_info (id, first_name, last_name, position_id) VALUES (null, 'Angela', 'Ivanova', 2);
+INSERT INTO personal_info (id, first_name, last_name, position_id) VALUES (null, 'Stepan', 'Petrovichsky', 1); 
+INSERT INTO personal_info (id, first_name, last_name, position_id) VALUES (null, 'Vitya', 'Zabegailo', 3);
+INSERT INTO personal_info (id, first_name, last_name, position_id) VALUES (null, 'Petya', 'Zabegailo', 3);
+INSERT INTO personal_info (id, first_name, last_name, position_id) VALUES (null, 'Feoktist', 'Przhevalsky', 4);
+
+SELECT personal_info.first_name, personal_info.last_name, positions.position, positions.salary
+FROM personal_info INNER JOIN positions ON personal_info.position_id=positions.id;
