@@ -57,8 +57,18 @@ def get_html_advanced(url, filename=None):
         if not filename:
             filename = url_to_filename(url)
         html_file = open(filename, "w")
-        symbols = len(obj.text)
         html_file.write(obj.text)
+
+        html_file = open(filename, "r")
+        symbols = 0
+        lines = 0
+
+        for line in html_file:
+            lines += 1
+            symbols += len(line)
+        symbols = symbols - lines + 1
+        # удаляем все символы конца строки кроме последнего - eof
+
         html_file.close()
         return [filename, symbols]
 
